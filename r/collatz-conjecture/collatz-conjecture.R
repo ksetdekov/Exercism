@@ -1,18 +1,14 @@
 collatz_step_counter <- function(num) {
     result <- NULL
-    stepcounter <- function(victim) {
-        n <- 0
-        while (victim > 1) {
-            victim <- ifelse(victim %% 2 == 0, victim / 2, victim * 3 + 1)
-            n <- n + 1
-        }
-        n
+    stepcounter <- function(n) {
+        if (n <= 0)
+            stop('input not positive')
+        if (n == 1)
+            0
+        else if (n %% 2 == 0)
+            1 + stepcounter(n / 2)
+        else
+            1 + stepcounter(3 * n + 1)
     }
-    if (num <= 0)
-        stop('input not positive')
-    for (num1 in num) {
-        resulti <- stepcounter(num1)
-        result[length(result) + 1] <- resulti
-    }
-    result
+    sapply(num, stepcounter)
 }
