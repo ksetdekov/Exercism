@@ -1,12 +1,16 @@
 raindrops <- function(number) {
-    dplyr::case_when(
-        number %% 105 == 0 ~ "PlingPlangPlong",
-        number %% 15 == 0 ~ "PlingPlang",
-        number %% 21 == 0 ~ "PlingPlong",
-        number %% 35 == 0 ~ "PlangPlong",
-        number %% 3 == 0 ~ "Pling",
-        number %% 5 == 0 ~ "Plang",
-        number %% 7 == 0 ~ "Plong",
-        TRUE ~ as.character(number)
-    )
+    result <- ''
+    if (number %% 3 == 0) {
+        result <- "Pling"
+    }
+    if (number %% 5 == 0) {
+        result <- paste0(result, "Plang")
+    }
+    if (number %% 7 == 0) {
+        result <- paste0(result, "Plong")
+    }
+    if (result=='') {
+        result <- as.character(number)
+    }
+    result
 }
