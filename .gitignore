@@ -273,3 +273,4 @@ dmypy.json
 **/.idea
 
 *.exercism*
+.Rproj.user
