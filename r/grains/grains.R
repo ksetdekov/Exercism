@@ -5,5 +5,5 @@ square <- function(n) {
 }
 
 total <- function() {
-    sum(sapply(1:64, square))
+    sum(2^(0:63))
 }
