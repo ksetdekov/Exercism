@@ -8,3 +8,11 @@ to_rna <- function(dna) {
         strsplit(dna, NULL)
     ), converter)), collapse = '')
 }
+# this is several times faster
+to_rna2 <- function(dna) {
+    if (grepl("[^ACGT]", dna)) {
+        stop("incomplete dna")
+    } else {
+        chartr("ACGT", "UGCA", dna)
+    }
+}
