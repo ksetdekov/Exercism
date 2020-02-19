@@ -13,7 +13,7 @@ def convert(n):
         p2 = True
     if (n % 7) == 0:
         p3 = True
-    test = [p1,p2,p3]
+    test = [p1, p2, p3]
 
     final = not any(test)
     if not any(test):
@@ -21,8 +21,10 @@ def convert(n):
 
     return final
 
-test = [True,True,True]
-print(not any(test))
+
+test2 = [True, True, True]
+
+
 print("#########################")
 print(convert(1))
 print(convert(2))
