@@ -6,6 +6,6 @@ def convert(n):
         result = result + 'Plang'
     if (n % 7) == 0:
         result = result + 'Plong'
-    else:
+    if result == '':
         result = str(n)
     return result
