@@ -4,9 +4,19 @@ def day(count):
 
 
 def recite(start_verse, end_verse):
+    things = ["twelve Drummers Drumming, ",
+              "eleven Pipers Piping, ",
+              "ten Lords-a-Leaping, ",
+              "nine Ladies Dancing, ",
+              "eight Maids-a-Milking, ",
+              "seven Swans-a-Swimming, ",
+              "six Geese-a-Laying, ",
+              "five Gold Rings, ",
+              "four Calling Birds, ",
+              "three French Hens, ",
+              "two Turtle Doves, and ",
+              "a Partridge in a Pear Tree."]
     for v in range(start_verse, end_verse + 1):
-        print(day(v))
-
-
-for i in range(1, 13):
-    recite(i, i)
+        intro = f'On the {day(v)} day of Christmas my true love gave to me: '
+        print(intro)
+        print(''.join(things[(12-v):12]))
