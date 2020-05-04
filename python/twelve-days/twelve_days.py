@@ -1,13 +1,10 @@
-import textwrap
-
-
 def day(count):
     return ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh",
             "twelfth"][count - 1]
 
 
 def recite(start_verse, end_verse):
-    final = ''
+    final = list()
     things = ["twelve Drummers Drumming, ",
               "eleven Pipers Piping, ",
               "ten Lords-a-Leaping, ",
@@ -21,7 +18,5 @@ def recite(start_verse, end_verse):
               "two Turtle Doves, and ",
               "a Partridge in a Pear Tree."]
     for v in range(start_verse, end_verse + 1):
-        result = f'On the {day(v)} day of Christmas my true love gave to me: '+''.join(things[(12 - v):12])
-        final = final + result
-    return [textwrap.fill(final, 900000)]
-
+        final.append(f'On the {day(v)} day of Christmas my true love gave to me: '+''.join(things[(12 - v):12]))
+    return final
