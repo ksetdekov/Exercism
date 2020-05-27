@@ -14,8 +14,10 @@ You can learn more here: https://en.wikipedia.org/wiki/Enumerated_type
 
 # Score categories.
 # Change the values as you see fit.
+import re
+
 YACHT = None
-ONES = None
+ONES = 1
 TWOS = None
 THREES = None
 FOURS = None
@@ -29,4 +31,6 @@ CHOICE = None
 
 
 def score(dice, category):
-    pass
+    if category == 1:
+        print(re.findall(r"1",dice))
+    return 50
